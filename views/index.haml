@@ -1,7 +1,8 @@
-- if @short_url.present? and !@short_url.valid?
-  %p Invalid url: #{@short_url.url}
-- else
-  %p http://localhost:4567/#{@short_url.shorten}
+- if @short_url.present?
+  - if @short_url.valid?
+    %p http://localhost:4567/#{@short_url.shorten}
+  - else
+    %p Invalid url: #{@short_url.url}
 
 %form(action="/" method="POST")
   %label(for="url")
