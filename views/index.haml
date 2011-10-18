@@ -1,0 +1,8 @@
+- if @short_url.present? and !@short_url.valid?
+  %p Invalid url: #{@short_url.url}
+
+%form(action="/" method="POST")
+  %label(for="url")
+  %input(type="text" name="url" id="url")
+  %input(type="submit" value="Shorten")
+
